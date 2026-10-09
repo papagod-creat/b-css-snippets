@@ -1,0 +1,68 @@
+/* 常用按钮效果片段 · buttons.css */
+
+/* 1. 主色渐变按钮（hover 上浮 + 阴影加深） */
+.btn-gradient {
+  padding: 10px 22px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, #4f6ef7, #9b59f6);
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 110, 247, .35);
+}
+
+/* 2. 描边幽灵按钮（hover 反色填充） */
+.btn-ghost {
+  padding: 10px 22px;
+  border: 1.5px solid #4f6ef7;
+  border-radius: 10px;
+  color: #4f6ef7;
+  background: transparent;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.btn-ghost:hover {
+  background: #4f6ef7;
+  color: #fff;
+}
+
+/* 3. 按压回弹按钮（active 缩放） */
+.btn-press {
+  padding: 10px 22px;
+  border: 0;
+  border-radius: 10px;
+  background: #22283a;
+  color: #fff;
+  cursor: pointer;
+  transition: transform .08s ease;
+}
+.btn-press:active { transform: scale(.94); }
+
+/* 4. 加载中按钮（伪元素旋转圈） */
+.btn-loading {
+  position: relative;
+  padding: 10px 22px 10px 44px;
+  border: 0;
+  border-radius: 10px;
+  background: #4f6ef7;
+  color: #fff;
+  cursor: wait;
+}
+.btn-loading::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border: 2px solid rgba(255,255,255,.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: btn-spin .7s linear infinite;
+}
+@keyframes btn-spin { to { transform: rotate(360deg); } }
