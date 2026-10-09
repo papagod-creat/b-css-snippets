@@ -1,0 +1,55 @@
+/* 常用卡片效果片段 · cards.css */
+
+/* 1. 基础浮起卡片（hover 抬升） */
+.card-lift {
+  padding: 20px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(30, 40, 90, .08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(30, 40, 90, .14);
+}
+
+/* 2. 玻璃拟态卡片（毛玻璃） */
+.card-glass {
+  padding: 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, .6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+
+/* 3. 渐变描边卡片（双层背景技巧） */
+.card-border-glow {
+  padding: 2px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4f6ef7, #9b59f6, #4f6ef7);
+  background-size: 200% 200%;
+  animation: glow-move 4s linear infinite;
+}
+.card-border-glow > .inner {
+  padding: 18px;
+  border-radius: 12px;
+  background: #fff;
+}
+@keyframes glow-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 4. 图片上文字卡片（底部渐变遮罩） */
+.card-overlay { position: relative; border-radius: 14px; overflow: hidden; }
+.card-overlay img { display: block; width: 100%; }
+.card-overlay .caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 32px 14px 12px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .65));
+}
