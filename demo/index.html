@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Snippets · Demo</title>
+<link rel="stylesheet" href="../snippets/buttons.css">
+<link rel="stylesheet" href="../snippets/cards.css">
+<link rel="stylesheet" href="../snippets/gradients.css">
+<style>
+  body { font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+         margin: 0; padding: 28px 16px; background: #f6f7fb; color: #22283a; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 22px; } h2 { font-size: 15px; margin: 28px 0 12px; color: #7a8199; }
+  .demo-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .demo-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .demo-grads > div { height: 72px; border-radius: 12px; margin-bottom: 10px;
+                      display: flex; align-items: center; justify-content: center;
+                      color: #fff; font-size: 13px; text-shadow: 0 1px 2px rgba(0,0,0,.25); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🎨 CSS Snippets · 在线 Demo</h1>
+
+  <h2>按钮 · buttons.css</h2>
+  <div class="demo-row">
+    <button class="btn-gradient">渐变主按钮</button>
+    <button class="btn-ghost">幽灵按钮</button>
+    <button class="btn-press">按压回弹</button>
+    <button class="btn-loading">加载中</button>
+  </div>
+
+  <h2>卡片 · cards.css</h2>
+  <div class="demo-cards">
+    <div class="card-lift"><b>浮起卡片</b><p style="font-size:13px;color:#7a8199">hover 试试抬升效果</p></div>
+    <div class="card-glass"><b>玻璃拟态</b><p style="font-size:13px;color:#555">毛玻璃 + 半透明</p></div>
+    <div class="card-border-glow"><div class="inner"><b>渐变描边</b><p style="font-size:13px;color:#7a8199">流光边框</p></div></div>
+    <div class="card-overlay">
+      <div style="height:110px;background:linear-gradient(135deg,#4f6ef7,#9b59f6)"></div>
+      <div class="caption">图片上文字 · 渐变遮罩</div>
+    </div>
+  </div>
+
+  <h2>渐变 · gradients.css</h2>
+  <div class="demo-grads">
+    <div class="grad-sunset">grad-sunset 晚霞</div>
+    <div class="grad-deep">grad-deep 深空</div>
+    <div class="grad-mint">grad-mint 薄荷</div>
+    <div class="grad-flow">grad-flow 流动</div>
+    <div class="grad-grid" style="color:#555;text-shadow:none">grad-grid 网格纸</div>
+  </div>
+</div>
+</body>
+</html>
